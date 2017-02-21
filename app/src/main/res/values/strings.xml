@@ -4,4 +4,5 @@
     <string name="edit_local">Edit Local</string>
     //this branch was created by another person from remote but not fully complete so i edited on local by pull
     //to new branch and edited and then push again
+    //ok now its ok to go to production
 </resources>
