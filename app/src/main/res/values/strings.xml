@@ -3,4 +3,5 @@
     <string name="edit">Edit</string>
     <string name="edit_local">Edit Local</string>
     <string name="edit_local_branch_only">Edit Local Branch Only</string>
+    //edit in test branch in remote
 </resources>
