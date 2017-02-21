@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main">#3C090E</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="home_screen_background">#212121</color>
+
+    <color name="colorPrimary">@color/main</color>
+    <color name="colorPrimaryDark">@color/main</color>
+    <color name="colorAccent">@color/main</color>
+</resources>
