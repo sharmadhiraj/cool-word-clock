@@ -2,6 +2,5 @@
     <string name="app_name">Cool Word Clock</string>
     <string name="edit">Edit</string>
     <string name="edit_local">Edit Local</string>
-    <string name="edit_master">Edit Master</string>
-    //edit in test branch in local
+    //finally merged test local and remote
 </resources>
