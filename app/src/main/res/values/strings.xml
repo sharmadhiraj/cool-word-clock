@@ -1,13 +1,3 @@
 <resources>
     <string name="app_name">Cool Word Clock</string>
-    <string name="edit">Edit</string>
-    <string name="edit_local">Edit Local</string>
-
-    //MASTER LOOKED INTO CONFLICT AND SORTED ERROR
-
-    //master also worked something
-    //this branch was created by another person from remote but not fully complete so i edited on local by pull
-    //to new branch and edited and then push again
-    //ok now its ok to go to production
-    //merge to master
 </resources>
