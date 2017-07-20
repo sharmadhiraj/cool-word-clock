@@ -18,4 +18,6 @@ public class CommonUtils {
 
     public static final String OFF_COLOR = "#333333";
     public static final String ON_COLOR = "#FFFFFF";
+    
+    //test git commit
 }
