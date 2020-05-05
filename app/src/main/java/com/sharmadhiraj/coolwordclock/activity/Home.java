@@ -1,127 +1,11 @@
-/*
- * Decompiled with CFR 0_118.
- * 
- * Could not load the following classes:
- *  android.app.ActionBar
- *  android.app.Activity
- *  android.app.ActivityManager
- *  android.app.ActivityManager$TaskDescription
- *  android.app.Application
- *  android.app.Dialog
- *  android.app.Fragment
- *  android.app.FragmentManager
- *  android.app.LoaderManager
- *  android.app.PendingIntent
- *  android.app.SharedElementCallback
- *  android.app.TaskStackBuilder
- *  android.app.VoiceInteractor
- *  android.app.assist.AssistContent
- *  android.content.BroadcastReceiver
- *  android.content.ComponentCallbacks
- *  android.content.ComponentName
- *  android.content.ContentResolver
- *  android.content.Context
- *  android.content.Intent
- *  android.content.IntentFilter
- *  android.content.IntentSender
- *  android.content.ServiceConnection
- *  android.content.SharedPreferences
- *  android.content.SharedPreferences$Editor
- *  android.content.pm.ApplicationInfo
- *  android.content.pm.PackageManager
- *  android.content.res.AssetManager
- *  android.content.res.ColorStateList
- *  android.content.res.Configuration
- *  android.content.res.Resources
- *  android.content.res.Resources$Theme
- *  android.content.res.TypedArray
- *  android.database.Cursor
- *  android.database.DatabaseErrorHandler
- *  android.database.sqlite.SQLiteDatabase
- *  android.database.sqlite.SQLiteDatabase$CursorFactory
- *  android.graphics.Bitmap
- *  android.graphics.Canvas
- *  android.graphics.Color
- *  android.graphics.Paint
- *  android.graphics.drawable.Drawable
- *  android.media.MediaPlayer
- *  android.media.session.MediaController
- *  android.net.Uri
- *  android.os.Build
- *  android.os.Build$VERSION
- *  android.os.Bundle
- *  android.os.Handler
- *  android.os.Looper
- *  android.os.PersistableBundle
- *  android.os.UserHandle
- *  android.support.annotation.Nullable
- *  android.support.v4.app.Fragment
- *  android.support.v4.app.FragmentManager
- *  android.support.v4.app.LoaderManager
- *  android.support.v4.app.SharedElementCallback
- *  android.support.v4.app.SupportActivity
- *  android.support.v4.app.SupportActivity$ExtraData
- *  android.support.v4.app.TaskStackBuilder
- *  android.support.v4.media.session.MediaControllerCompat
- *  android.support.v7.app.ActionBar
- *  android.support.v7.app.ActionBarDrawerToggle
- *  android.support.v7.app.ActionBarDrawerToggle$Delegate
- *  android.support.v7.app.AppCompatActivity
- *  android.support.v7.app.AppCompatDelegate
- *  android.support.v7.view.ActionMode
- *  android.support.v7.view.ActionMode$Callback
- *  android.support.v7.widget.Toolbar
- *  android.transition.Scene
- *  android.transition.TransitionManager
- *  android.util.AttributeSet
- *  android.util.DisplayMetrics
- *  android.util.Log
- *  android.view.ActionMode
- *  android.view.ActionMode$Callback
- *  android.view.ContextMenu
- *  android.view.ContextMenu$ContextMenuInfo
- *  android.view.Display
- *  android.view.DragAndDropPermissions
- *  android.view.DragEvent
- *  android.view.KeyEvent
- *  android.view.LayoutInflater
- *  android.view.Menu
- *  android.view.MenuInflater
- *  android.view.MenuItem
- *  android.view.MotionEvent
- *  android.view.SearchEvent
- *  android.view.View
- *  android.view.View$OnLongClickListener
- *  android.view.ViewGroup
- *  android.view.ViewGroup$LayoutParams
- *  android.view.Window
- *  android.view.WindowManager
- *  android.view.WindowManager$LayoutParams
- *  android.view.accessibility.AccessibilityEvent
- *  android.webkit.WebSettings
- *  android.webkit.WebSettings$RenderPriority
- *  android.webkit.WebView
- *  android.webkit.WebViewClient
- *  android.widget.RelativeLayout
- *  android.widget.Toolbar
- *  com.android.tools.fd.runtime.IncrementalChange
- *  com.android.tools.fd.runtime.InstantReloadException
- *  np.com.dhirajsharma.coolwordclock.activity.Home$1
- *  np.com.dhirajsharma.coolwordclock.activity.Home$2
- *  np.com.dhirajsharma.coolwordclock.activity.Home$3
- *  np.com.dhirajsharma.coolwordclock.util.CommonUtils
- */
-package np.com.dhirajsharma.coolwordclock.activity;
+package com.sharmadhiraj.coolwordclock.activity;
 
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
@@ -129,12 +13,18 @@ import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.sharmadhiraj.coolwordclock.R;
+import com.sharmadhiraj.coolwordclock.util.CommonUtils;
+
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-import np.com.dhirajsharma.coolwordclock.R;
-import np.com.dhirajsharma.coolwordclock.util.CommonUtils;
+import static com.sharmadhiraj.coolwordclock.util.CommonUtils.FONT_SIZE_VALUE;
+import static com.sharmadhiraj.coolwordclock.util.CommonUtils.WORDS;
 
 public class Home extends AppCompatActivity {
     private WebView webView;
@@ -144,21 +34,18 @@ public class Home extends AppCompatActivity {
     private Handler handler;
     private int lastMinute = -1;
     private Runnable r;
-    private String data = "";
     private boolean doubleBackToExitPressedOnce = false;
-
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        colors = Arrays.asList(new Boolean[CommonUtils.WORDS.size()]);
-        webView = (WebView) findViewById(R.id.webView);
-        container = (RelativeLayout) findViewById(R.id.container);
+        colors = Arrays.asList(new Boolean[WORDS.size()]);
+        webView = findViewById(R.id.webView);
+        container = findViewById(R.id.container);
         setContainerPadding();
         webViewSettings();
-
 
         startCountDown();
     }
@@ -182,8 +69,7 @@ public class Home extends AppCompatActivity {
         webView.setBackgroundColor(Color.parseColor("#212121"));
     }
 
-    private void loadDataToWebview() {
-        Log.d("My Log", ("Data : " + getDataToLoad()));
+    private void loadDataToWebView() {
         webView.loadData(getDataToLoad(), "text/html", "UTF-8");
         webView.reload();
     }
@@ -191,20 +77,22 @@ public class Home extends AppCompatActivity {
     private void setContainerPadding() {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
-//        int height = metrics.heightPixels;
         int width = metrics.widthPixels;
         container.setPadding(width / 13, 0, width / 13, 0);
     }
 
     private String getDataToLoad() {
-
         updateColor();
-        data = "<div style=\"text-align: justify; font-size: " + CommonUtils.FONT_SIZE_VALUE + "px; font-weight: bold;\">";
-        for (int i = 0; i < CommonUtils.WORDS.size(); ++i) {
-            data = data + "<span style=\"color:" + getColorForWord(i) + "\">" + CommonUtils.WORDS.get(i) + "</span> ";
+        StringBuilder data = new StringBuilder("<div style=\"text-align: justify; font-size: " + FONT_SIZE_VALUE + "px; font-weight: bold;\">");
+        for (int i = 0; i < WORDS.size(); ++i) {
+            data.append("<span style=\"color:")
+                    .append(getColorForWord(i))
+                    .append("\">")
+                    .append(WORDS.get(i))
+                    .append("</span> ");
         }
-        data = data + "</div>";
-        return data;
+        data.append("</div>");
+        return data.toString();
     }
 
     private void updateColor() {
@@ -231,7 +119,6 @@ public class Home extends AppCompatActivity {
         colors.set(19, hourBound(10));
         colors.set(20, hourBound(11));
         colors.set(21, hourBound(12));
-        Log.d("My Log", "Color Changed");
     }
 
     private String getColorForWord(int i) {
@@ -250,11 +137,9 @@ public class Home extends AppCompatActivity {
             @Override
             public void run() {
                 int currentTime = getMinute() / 5;
-                Log.d("MU LOG", "HERE OUTSIDE");
                 if (currentTime != lastMinute) {
-                    Log.d("MU LOG", "HERE INSIDE");
                     lastMinute = currentTime;
-                    loadDataToWebview();
+                    loadDataToWebView();
                     playDing();
                 }
                 handler.postDelayed(this, 10000);
