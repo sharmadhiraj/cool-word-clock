@@ -2,13 +2,10 @@ package com.sharmadhiraj.coolwordclock.activity;
 
 import android.graphics.Color;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
-import android.view.View;
 import android.view.WindowManager;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -23,6 +20,11 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
+import static android.os.Build.VERSION.SDK_INT;
+import static android.view.View.LAYER_TYPE_HARDWARE;
+import static android.view.View.LAYER_TYPE_SOFTWARE;
+import static android.webkit.WebSettings.LOAD_NO_CACHE;
+import static android.webkit.WebSettings.RenderPriority.HIGH;
 import static com.sharmadhiraj.coolwordclock.util.CommonUtils.FONT_SIZE_VALUE;
 import static com.sharmadhiraj.coolwordclock.util.CommonUtils.WORDS;
 
@@ -51,19 +53,10 @@ public class Home extends AppCompatActivity {
     }
 
     private void webViewSettings() {
-        webView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                return false;
-            }
-        });
-        webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
-        webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-        if (Build.VERSION.SDK_INT >= 19) {
-            webView.setLayerType(2, null);
-        } else {
-            webView.setLayerType(1, null);
-        }
+        webView.setOnLongClickListener(view -> false);
+        webView.getSettings().setRenderPriority(HIGH);
+        webView.getSettings().setCacheMode(LOAD_NO_CACHE);
+        webView.setLayerType(SDK_INT >= 19 ? LAYER_TYPE_HARDWARE : LAYER_TYPE_SOFTWARE, null);
         webView.setLongClickable(false);
         webView.setHapticFeedbackEnabled(false);
         webView.setBackgroundColor(Color.parseColor("#212121"));
@@ -190,12 +183,6 @@ public class Home extends AppCompatActivity {
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Press back key again to exit !", Toast.LENGTH_SHORT).show();
 
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
 }
