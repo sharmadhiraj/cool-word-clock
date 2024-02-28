@@ -11,9 +11,9 @@
         tools:ignore="AllowBackup">
 
         <activity
+            android:exported="true"
             android:name=".activity.Home"
             android:hardwareAccelerated="true"
-            android:label="@string/app_name"
             android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

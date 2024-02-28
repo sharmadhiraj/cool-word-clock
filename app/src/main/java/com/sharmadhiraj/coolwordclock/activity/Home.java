@@ -1,5 +1,11 @@
 package com.sharmadhiraj.coolwordclock.activity;
 
+import static android.view.View.LAYER_TYPE_HARDWARE;
+import static android.webkit.WebSettings.LOAD_NO_CACHE;
+import static android.webkit.WebSettings.RenderPriority.HIGH;
+import static com.sharmadhiraj.coolwordclock.util.CommonUtils.FONT_SIZE_VALUE;
+import static com.sharmadhiraj.coolwordclock.util.CommonUtils.WORDS;
+
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -19,14 +25,6 @@ import com.sharmadhiraj.coolwordclock.util.CommonUtils;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
-
-import static android.os.Build.VERSION.SDK_INT;
-import static android.view.View.LAYER_TYPE_HARDWARE;
-import static android.view.View.LAYER_TYPE_SOFTWARE;
-import static android.webkit.WebSettings.LOAD_NO_CACHE;
-import static android.webkit.WebSettings.RenderPriority.HIGH;
-import static com.sharmadhiraj.coolwordclock.util.CommonUtils.FONT_SIZE_VALUE;
-import static com.sharmadhiraj.coolwordclock.util.CommonUtils.WORDS;
 
 public class Home extends AppCompatActivity {
     private WebView webView;
@@ -56,7 +54,7 @@ public class Home extends AppCompatActivity {
         webView.setOnLongClickListener(view -> false);
         webView.getSettings().setRenderPriority(HIGH);
         webView.getSettings().setCacheMode(LOAD_NO_CACHE);
-        webView.setLayerType(SDK_INT >= 19 ? LAYER_TYPE_HARDWARE : LAYER_TYPE_SOFTWARE, null);
+        webView.setLayerType(LAYER_TYPE_HARDWARE, null);
         webView.setLongClickable(false);
         webView.setHapticFeedbackEnabled(false);
         webView.setBackgroundColor(Color.parseColor("#212121"));
