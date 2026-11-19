@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M32.5,36 H39.5 A2.5,2.5 0 0 1 42,38.5 A2.5,2.5 0 0 1 39.5,41 H32.5 A2.5,2.5 0 0 1 30,38.5 A2.5,2.5 0 0 1 32.5,36 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M49.5,36 H52.5 A2.5,2.5 0 0 1 55,38.5 A2.5,2.5 0 0 1 52.5,41 H49.5 A2.5,2.5 0 0 1 47,38.5 A2.5,2.5 0 0 1 49.5,36 Z" />
+    <path
+        android:fillColor="#4DFFFFFF"
+        android:pathData="M62.5,36 H75.5 A2.5,2.5 0 0 1 78,38.5 A2.5,2.5 0 0 1 75.5,41 H62.5 A2.5,2.5 0 0 1 60,38.5 A2.5,2.5 0 0 1 62.5,36 Z" />
+    <path
+        android:fillColor="#4DFFFFFF"
+        android:pathData="M32.5,46 H55.5 A2.5,2.5 0 0 1 58,48.5 A2.5,2.5 0 0 1 55.5,51 H32.5 A2.5,2.5 0 0 1 30,48.5 A2.5,2.5 0 0 1 32.5,46 Z" />
+    <path
+        android:fillColor="#4DFFFFFF"
+        android:pathData="M65.5,46 H75.5 A2.5,2.5 0 0 1 78,48.5 A2.5,2.5 0 0 1 75.5,51 H65.5 A2.5,2.5 0 0 1 63,48.5 A2.5,2.5 0 0 1 65.5,46 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M32.5,56 H47.5 A2.5,2.5 0 0 1 50,58.5 A2.5,2.5 0 0 1 47.5,61 H32.5 A2.5,2.5 0 0 1 30,58.5 A2.5,2.5 0 0 1 32.5,56 Z" />
+    <path
+        android:fillColor="#4DFFFFFF"
+        android:pathData="M57.5,56 H75.5 A2.5,2.5 0 0 1 78,58.5 A2.5,2.5 0 0 1 75.5,61 H57.5 A2.5,2.5 0 0 1 55,58.5 A2.5,2.5 0 0 1 57.5,56 Z" />
+    <path
+        android:fillColor="#4DFFFFFF"
+        android:pathData="M32.5,66 H41.5 A2.5,2.5 0 0 1 44,68.5 A2.5,2.5 0 0 1 41.5,71 H32.5 A2.5,2.5 0 0 1 30,68.5 A2.5,2.5 0 0 1 32.5,66 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M51.5,66 H63.5 A2.5,2.5 0 0 1 66,68.5 A2.5,2.5 0 0 1 63.5,71 H51.5 A2.5,2.5 0 0 1 49,68.5 A2.5,2.5 0 0 1 51.5,66 Z" />
+    <path
+        android:fillColor="#4DFFFFFF"
+        android:pathData="M73.5,66 H75.5 A2.5,2.5 0 0 1 78,68.5 A2.5,2.5 0 0 1 75.5,71 H73.5 A2.5,2.5 0 0 1 71,68.5 A2.5,2.5 0 0 1 73.5,66 Z" />
+</vector>
